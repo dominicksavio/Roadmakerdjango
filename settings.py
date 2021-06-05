@@ -27,7 +27,7 @@ SECRET_KEY = 'jnfo_)a!%cmlw1ya%j%#-m#!i2^9%81-=42z!#(4s^1b87itjg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['roadmaker.herokuapp.com']
 
 
 # Application definition
