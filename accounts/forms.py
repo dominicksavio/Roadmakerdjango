@@ -17,13 +17,18 @@ class ImageForm(forms.ModelForm):
   model = Image
   fields = '__all__'
   labels = {'photo':''}  
-
+CHOICES=[
+    ('fixed','fixed'),
+    ('working on it','working on it'),
+    ('NA','Nothing done till now'),
+    ]
 class ClustersForm(forms.ModelForm):
- # cluster = forms.IntegerField(widget=forms.HiddenInput()) 
+ cluster = forms.IntegerField(widget=forms.HiddenInput()) 
+ status= forms.CharField(label='What is the current status?', widget=forms.Select(choices=CHOICES))
  class Meta:
   model = Clusters
   fields = ('status','cluster',)
-
+  
   # labels = {'photo':''}  
 
 def email(self):
