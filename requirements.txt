@@ -4,3 +4,4 @@ gunicorn
 django-heroku
 django-password-reset
 requests
+Pillow
