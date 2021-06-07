@@ -143,8 +143,9 @@
   <body>
     <div id="map"></div>
     {% for x in cluster %}
-	    <div id="content{{x.cluster}}">Cluster No :{{x.cluster}} @{{x.lat}},{{x.lon}}
+	    <div id="content{{x.cluster}}">Cluster No :{{x.cluster}} @{{x.lat}},{{x.lon}} Frequency:{{x.frequency}}
         <a href="{% url 'home_url_id' x.cluster%}">Edit cluster #{{x.cluster}}</a>
+      }
       </div>
 	{% endfor %}
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
