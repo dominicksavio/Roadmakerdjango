@@ -6,7 +6,7 @@
   </head>
   <body>
     <style type="text/css">
-        a, button {
+        a, button ,select,input{
         display: block;
           position: relative;
           background-color: #3366ff;
@@ -22,7 +22,7 @@
           cursor: pointer;
         }
 
-        a:after, button:after {
+        a:after, button:after ,select:after,input:after{
           content: "";
           background: #f1f1f1;
           display: block;
@@ -35,7 +35,7 @@
           transition: all 0.8s
         }
 
-        a:active:after, button:active:after {
+        a:active:after, button:active:after,select:active:after,input:active:after {
           padding: 0;
           margin: 0;
           opacity: 1;
