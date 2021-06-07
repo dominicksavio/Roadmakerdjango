@@ -76,7 +76,7 @@ def home(request, clusterid=-2):
         form1 = ImageForm(request.POST, request.FILES)
         # save the data from the form and
         # redirect to detail_view
-        print(form1)
+        # print(form1)
         if form.is_valid() and form1.is_valid():
             fs= form.save(commit=False)
             fs1= form1.save(commit=False)
