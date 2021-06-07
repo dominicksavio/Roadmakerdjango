@@ -4,6 +4,43 @@
   <title>Verify Work</title>
   </head>
   <body>
+    <style type="text/css">
+        a, button {
+        display: block;
+          position: relative;
+          background-color: #3366ff;
+          border: none;
+          font-size: 28px;
+          color: #FFFFFF;
+          padding: 20px;
+          width: 200px;
+          text-align: center;
+          transition-duration: 0.4s;
+          text-decoration: none;
+          overflow: hidden;
+          cursor: pointer;
+        }
+
+        a:after, button:after {
+          content: "";
+          background: #f1f1f1;
+          display: block;
+          position: absolute;
+          padding-top: 300%;
+          padding-left: 350%;
+          margin-left: -20px !important;
+          margin-top: -120%;
+          opacity: 0;
+          transition: all 0.8s
+        }
+
+        a:active:after, button:active:after {
+          padding: 0;
+          margin: 0;
+          opacity: 1;
+          transition: 0s
+        }
+    </style>
    <div class="container">
     <div class="py-5 text-center bg-secondary text-white">
      <h1 class="mb-3">Verify Work</h1>

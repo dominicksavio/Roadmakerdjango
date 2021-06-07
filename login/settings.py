@@ -25,7 +25,7 @@ SECRET_KEY = 'jnfo_)a!%cmlw1ya%j%#-m#!i2^9%81-=42z!#(4s^1b87itjg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['roadmaker.herokuapp.com']
+ALLOWED_HOSTS = ['roadmaker.herokuapp.com',"127.0.0.1","localhost"]
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'roadmakerDB',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '34.93.43.244',
+        'HOST': '35.244.42.250',
         'PORT': '5432',
     }
 }
@@ -126,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR
+STATIC_ROOT = BASE_DIR/'static/*'
 LOGIN_REDIRECT_URL = '/accounts/dashboard/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
