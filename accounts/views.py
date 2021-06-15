@@ -106,33 +106,36 @@ def viewImages(request):
 def updateOnCluster(req):
     if req.method == "GET":
         cluster = Clusters.objects.filter(status='NA').exclude(cluster=-1)
+
         lonlat=[]
         for x in cluster:
             lonlat.append(getlonlat(x.image_hash))
+
         return render(req,'myapp/clusterSubmit.html', {'cluster':cluster,'lonlat':lonlat})  
-
-# def loginsignup(request):
-    # if request.method =="POST":
-
-    #     username = request.POST['username']
-    #     password = request.POST['password']
-    #     user = authenticate(request, username=username, password=password)
-    #     if user is not None:
-    #         login(request, user)
-    # form = SignUpForm()
-    # return render(request,'loginsignup.html',{'form':form})
 
 
 
 def registerView(request):
     if request.method =="POST":
-        print("START")
         form = SignUpForm(request.POST)
-        print(form)
-        print("END")
         if form.is_valid():
             form.save()
             return redirect('login_url')
+       
     else:
-        form = SignUpForm()
-    return render(request,'registration/register.html',{'form':form})     
+        form = SignUpForm()    
+    return render(request,'registration/register.html',{'form':form})
+
+
+def loginSignUp(request):
+    if request.method =="POST":
+        print("HEEE")
+        form = SignUpForm(request.POST)
+        print(form)
+        # user = authenticate(username='john', password='secret')
+        # if user is not None:
+        #     # A backend authenticated the credentials
+        # else:
+
+    form = SignUpForm()
+    return render(request,'loginsignup.html',{'form':form})
