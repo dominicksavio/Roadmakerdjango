@@ -1,11 +1,31 @@
 {% extends 'index.html'%}
 {% block content %}
-    <h1>Login</h1>
+    <a href="{% url 'register_url' %}"style="margin-bottom: -150px">Register</a><br>
     <form method="POST">
         {% csrf_token %}
-        {{form.as_p}}
-        <button>Login</button>
+        <!-- <input id="input-1" type="text" placeholder="Shiju" required autofocus />
+		  <label for="input-1">
+		    <span class="label-text">Username {% for error in form.username.errors %}{{error}}{% endfor %}</span>
+		    <span class="nav-dot"></span>
+		    <div class="signup-button-trigger">Sign Up</div>
+		  </label> -->
+        {{form.username}}
+        <label for="input-1">
+		    <span class="label-text">Username {% for error in form.username.errors %}{{error}}{% endfor %}</span>
+		    <span class="nav-dot"></span>
+		    <div class="signup-button-trigger">Sign Up</div>
+		  </label>
+        {{form.password}}
+		<label for="input-2">
+		    <span class="label-text">Password {% for error in form.password.errors %}{{error}}{% endfor %}</span>
+		    <span class="nav-dot"></span>
+		  </label>
+		<button type="submit">Login</button>
+
+		<p class="tip">Press Tab</p>
+		<div class="signup-button">Login</div>
     </form>
-    <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
-    <p><a href="{% url 'register_url' %}">Sign Up</a></p>
+
+    <!-- <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p> -->
+    <!-- <p><a href="{% url 'register_url' %}">Sign Up</a></p> -->
 {% endblock %}    

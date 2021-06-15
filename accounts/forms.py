@@ -35,9 +35,14 @@ def email(self):
 
 
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField()
-    last_name = forms.CharField()
-    email = forms.EmailField()
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'id': 'input-4','required':'true','autofocus':'true','placeholder':'Alen'}))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'id': 'input-5','required':'true','autofocus':'true','placeholder':'Varghese'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'id': 'input-3','required':'true','autofocus':'true','placeholder':"email@address.com"}))
     class Meta:
         model = User
         fields = ('username','first_name','last_name','email','password1','password2')
+        widget = {
+            'username': forms.TextInput(attrs={'id': 'input-1','required':'true','autofocus':'true','placeholder':'alen'}),
+            'password1': forms.TextInput(attrs={'id': 'input-2','required':'true','autofocus':'true','placeholder':"&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"}),
+            'password2': forms.TextInput(attrs={'id': 'input-6','required':'true','autofocus':'true','placeholder':"&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"}),
+        }

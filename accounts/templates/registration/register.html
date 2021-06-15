@@ -1,10 +1,57 @@
 {% extends 'index.html'%}
 {% block content %}
-    <h1>Create New Account</h1>
+<!--     <h1>Create New Account</h1>
     <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
     <button>Register</button>
     <p><a href="{% url 'login_url' %}">Back</a></p>
     </form>
+ -->
+<a href="{% url 'login_url' %}"style="margin-bottom: -150px">Login</a><br>
+ <form method="POST">
+ {% csrf_token %}
+ {{form.username}}
+  <!-- <input id="input-1" type="text" placeholder="Shiju" required autofocus /> -->
+  <label for="input-1">
+    <span class="label-text">Username {% for error in form.username.errors %}{{error}}{% endfor %}</span>
+    <span class="nav-dot"></span>
+    <div class="signup-button-trigger">Sign Up</div>
+  </label>
+  {{form.first_name}}
+  <!-- <input id="input-2" type="text" placeholder="George" required /> -->
+  <label for="input-2">
+    <span class="label-text">First Name {% for error in form.first_name.errors %}{{error}}{% endfor %}</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{form.last_name}}
+  <!-- <input id="input-3" type="email" placeholder="email@address.com" required /> -->
+  <label for="input-3">
+    <span class="label-text">Last Name {% for error in form.last_name.errors %}{{error}}{% endfor %}</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{form.email}}
+  <!-- <input id="input-4" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required /> -->
+  <label for="input-4">
+    <span class="label-text">Email {% for error in form.email.errors %}{{error}}{% endfor %}</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{form.password1}}
+  <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required /> -->
+  <label for="input-5">
+    <span class="label-text">Password {% for error in form.password1.errors %}{{error}}{% endfor %}</span>
+    <span class="nav-dot"></span>
+  </label>
+  {{form.password2}}
+  <!-- <input id="input-6" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required /> -->
+  <label for="input-6">
+    <span class="label-text">Confirm Password {% for error in form.password2.errors %}{{error}}{% endfor %}</span>
+    <span class="nav-dot"></span>
+  </label>
+  <button type="submit">Create Your Account</button>
+  <p class="tip">Press Tab</p>
+  <div class="signup-button">Sign Up</div>
+</form>
+
+
 {% endblock %}    

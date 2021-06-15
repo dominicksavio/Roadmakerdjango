@@ -5,13 +5,24 @@
   </head>
   <body>
     <style type="text/css">
+      html,
+body {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, #111e25 0%, #111 100%);
+  font-family: "Lato", sans-serif;
+
+          color: rgba(255, 255, 255, 0.85);
+}
         a, button {
         display: block;
           position: relative;
           background-color: #3366ff;
           border: none;
           font-size: 28px;
-          color: #FFFFFF;
+          
+          background: #bb1515;
+          color: rgba(255, 255, 255, 0.85);
           padding: 20px;
           width: 200px;
           text-align: center;
@@ -48,24 +59,27 @@
 
      <table>
      	<tr>
-     		<td>
+     		
      <div class="row">
      	{% for x in cluster %}
+      <td>
      		<div class="col-sm-4">
 		       <div class="card m-2">
 		       	<a href="{% url 'home_url_id' x.cluster%}">{{x.cluster}}</a>
-		         
+		         Frequency
 		         {{x.frequency}}
-		         {{x.image_hash}}
+		     
 		         
 		       </div>
 		     </div>
+         </td>
 		{% endfor %}
     </div>
-    </td>
-    <td>
+    
+  </tr>  <tr>
     <div class="row">
      {% for x in lonlat %}
+     <td>
       <div class="col-sm-4">
        <div class="card m-2">
         
@@ -73,9 +87,10 @@
         
        </div>
       </div>
+      </td>
      {% endfor %}
  	</div>
- 	</td>
+ 	
  	</tr>
  	</table>
     </div>
