@@ -51,6 +51,4 @@ class SignUpForm(UserCreationForm):
         fields = ('username','first_name','last_name','email','password1','password2')
         widgets={
               'username': forms.TextInput(attrs={'class': 'input','placeholder':'Username'}),
-              # 'password1': forms.PasswordInput(attrs={'class': 'input','placeholder':'Password'}),
-              # 'password2': forms.PasswordInput(attrs={'class': 'input','placeholder':'Confirm Password'}),
           }

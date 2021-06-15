@@ -125,17 +125,3 @@ def registerView(request):
     else:
         form = SignUpForm()    
     return render(request,'registration/register.html',{'form':form})
-
-
-def loginSignUp(request):
-    if request.method =="POST":
-        print("HEEE")
-        form = SignUpForm(request.POST)
-        print(form)
-        # user = authenticate(username='john', password='secret')
-        # if user is not None:
-        #     # A backend authenticated the credentials
-        # else:
-
-    form = SignUpForm()
-    return render(request,'loginsignup.html',{'form':form})
