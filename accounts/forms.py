@@ -4,14 +4,6 @@ from django import forms
 from django.core.validators import validate_slug, validate_email
 from .models import Image
 from .models import Clusters
-class SignUpForm(UserCreationForm):
-    first_name = forms.CharField()
-    last_name = forms.CharField()
-    email = forms.EmailField()
-    class Meta:
-        model = User
-        fields = ('username','first_name','last_name','email','password1','password2')
-
 class ImageForm(forms.ModelForm):
  class Meta:
   model = Image
@@ -38,3 +30,14 @@ def email(self):
         if user_count > 0:
           raise forms.validationError("tttttttttt")
         return email    
+
+
+
+
+class SignUpForm(UserCreationForm):
+    first_name = forms.CharField()
+    last_name = forms.CharField()
+    email = forms.EmailField()
+    class Meta:
+        model = User
+        fields = ('username','first_name','last_name','email','password1','password2')

@@ -102,17 +102,6 @@ def viewImages(request):
         # latlon.append(Location.location(x.photo))
     # return render(request, 'myapp/viewimage.html', {'img':img,'latlon':latlon})  
     return render(request, 'myapp/viewimage.html', {'img':img})  
-
-def registerView(request):
-    if request.method =="POST":
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login_url')
-       
-    else:
-        form = SignUpForm()    
-    return render(request,'registration/register.html',{'form':form})     
 @login_required    
 def updateOnCluster(req):
     if req.method == "GET":
@@ -124,3 +113,15 @@ def updateOnCluster(req):
 
         return render(req,'myapp/clusterSubmit.html', {'cluster':cluster,'lonlat':lonlat})  
 
+
+
+def registerView(request):
+    if request.method =="POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login_url')
+       
+    else:
+        form = SignUpForm()    
+    return render(request,'registration/register.html',{'form':form})     
