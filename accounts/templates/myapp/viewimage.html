@@ -811,7 +811,10 @@ input.checkbox:checked:after {
        <div class="card m-2">
         <img src="{{x.updated_image.url}}" alt="" class="card-img-top" height="200px">
         <div class="card-footer">
-         Cluster number :{{x.cluster}}
+         Frequency :{{x.frequency}}
+         Location :{{x.lat}},{{x.lon}}
+         Status :{{x.status}}
+         <a href="{% url 'home_url_id' x.cluster%}">{{x.cluster}}</a>
         </div>
        </div>
       </div>
