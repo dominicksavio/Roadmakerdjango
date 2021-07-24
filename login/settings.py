@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'roadmakerDB',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '35.244.42.250',
+        'HOST': '35.200.140.224',
         'PORT': '5432',
     }
 }
